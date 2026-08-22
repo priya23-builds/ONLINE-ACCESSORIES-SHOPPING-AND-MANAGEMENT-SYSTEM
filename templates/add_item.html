@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online Accessories Shop</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <h1>add_item</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flash">{% for message in messages %}<li>{{ message }}</li>{% endfor %}</ul>
+      {% endif %}
+    {% endwith %}
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    {% if 'add_item' == 'login' %}
+    <form method="post">
+      <label>Email<input type="email" name="mail" required></label>
+      <label>Password<input type="password" name="pass" required></label>
+      <button type="submit">Login</button>
+    </form>
+    {% elif 'add_item' == 'registration' %}
+    <form method="post">
+      <label>Full name<input name="fullname" required></label>
+      <label>Email<input type="email" name="mail" required></label>
+      <label>Password<input type="password" name="password" required></label>
+      <label>Phone<input name="phone"></label>
+      <button type="submit">Register</button>
+    </form>
+    {% else %}
+    <p>This placeholder template is included because the student's original HTML files were not supplied.</p>
+    <p>Replace this file with the original project page when available.</p>
+    {% endif %}
+    <nav>
+      <a href="{{ url_for('landing') }}">Home</a> |
+      <a href="{{ url_for('login') }}">Login</a> |
+      <a href="{{ url_for('registration') }}">Register</a> |
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+  </main>
+</body>
+</html>

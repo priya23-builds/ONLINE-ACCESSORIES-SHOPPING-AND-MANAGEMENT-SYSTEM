@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
+.page { max-width: 900px; margin: 50px auto; padding: 24px; background: white; border-radius: 12px; }
+form { display: grid; gap: 14px; max-width: 420px; }
+label { display: grid; gap: 6px; }
+input, button { padding: 10px; font: inherit; }
+.flash { padding-left: 20px; }
+.error { color: #b00020; }
+nav { margin-top: 24px; }
