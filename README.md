@@ -74,18 +74,3 @@ The source code contains an admin check for:
 
 - Email: `admin@gmail.com`
 - Password: `admin@123`
-
-These are preserved only as a reference to the supplied academic code. Change them before any real deployment.
-
-## Important notes before GitHub publication
-
-1. The original source contains hard-coded database credentials and a Flask secret key. This repository moves configuration to environment variables and ignores `.env`.
-2. The original login SQL contained a malformed condition. This repository uses `WHERE email = %s` so the route is syntactically correct.
-3. The original code referenced `userdashboard` but did not define that route. This repository adds the missing route and template placeholder.
-4. The original code returned strings such as `"my_orders.html"`; this repository renders the matching templates.
-5. Passwords are still stored as plain text because that is what the supplied student code does. Hash passwords before any real-world deployment.
-6. The supplied project report describes a broader e-commerce scope than the backend code currently implements. The repository therefore does not claim that payment, wishlist, recommendations, delivery integration, or full CRUD are implemented here.
-
-## What to add when available
-
-Replace the placeholder templates and empty static folders with the student's actual HTML/CSS/images. Also replace the starter schema with the exact database export if the student has one.
